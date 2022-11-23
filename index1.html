@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descobrindo a nacionalidade</title>
+</head>
+<body>
+   <h1>De acordo com o país em que você nasceu, você é...</h1>
+   Digite seu país de nascimento: <input type="text" name="pais" id="pais">
+   <button type="submit" id="btn" onclick="nacionalidade()" >Descobrir</button>
+   <div id="res"></div>
+
+   <script>
+        // var btn = document.getElementById('btn')
+        // btn.addEventListener('click', nacionalidade)
+
+    function nacionalidade() {
+        var p1 = document.querySelector('input#pais').value
+        var res = document.querySelector('div#res')
+        res.innerHTML = `Você nasceu no(a) ${p1}!`
+
+            if (p1 == 'brasil' || p1 == 'Brasil') {
+                res.innerHTML += `<p>Você nasceu no ${p1}, portanto é brasileiro!</p>`
+            } else {
+                res.innerHTML += `<p>Você não nasceu no Brasil, portanto é estrangeiro!</p>`
+            }
+    }
+   </script>
+</body>
+</html>
